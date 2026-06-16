@@ -1,0 +1,1059 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Reconstrução Pessoal – Rafael Albuquerque</title>
+<link rel="icon" href="https://res.cloudinary.com/dhcfhgn33/image/upload/w_800,c_fill,q_auto,f_auto/v1781616890/LogoElara3_pi2wng.png" type="image/x-icon">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800;900&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --gold: #C9933A;
+    --gold-light: #E8B055;
+    --black: #0A0A0A;
+    --dark: #111111;
+    --dark2: #1A1A1A;
+    --white: #FFFFFF;
+    --off-white: #F5F5F0;
+    --gray: #888888;
+    --text: #222222;
+  }
+
+  body {
+    font-family: 'Open Sans', sans-serif;
+    color: var(--text);
+    background: var(--white);
+    overflow-x: hidden;
+  }
+
+  /* ── TOPBAR ── */
+  .topbar {
+    background: var(--black);
+    color: var(--white);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 40px;
+  }
+  .topbar-logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    font-size: 13px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--white);
+  }
+  .topbar-logo svg { width: 28px; height: 28px; }
+  .topbar-tagline {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 11px;
+    font-weight: 700;
+    text-align: right;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    line-height: 1.4;
+  }
+  .topbar-tagline span { color: var(--gold); }
+
+  /* ── HERO ── */
+  .hero {
+    background: var(--white);
+    padding: 60px 40px 50px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    align-items: center;
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+
+  .hero-badge {
+    display: inline-block;
+    border: 2px solid var(--gold);
+    color: var(--gold);
+    font-family: 'Montserrat', sans-serif;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    padding: 5px 14px;
+    margin-bottom: 20px;
+  }
+
+  .hero h1 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: clamp(32px, 6vw, 72px);
+    font-weight: 900;
+    line-height: 1;
+    text-transform: uppercase;
+    color: var(--black);
+    margin-bottom: 4px;
+  }
+  .hero h1 span { color: var(--gold); display: block; }
+
+  .hero-sub {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--black);
+    margin: 18px 0 10px;
+    line-height: 1.4;
+  }
+  .hero-desc {
+    font-size: 14px;
+    color: #444;
+    line-height: 1.7;
+    margin-bottom: 28px;
+  }
+
+  .hero-features {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+    margin-bottom: 30px;
+  }
+  .feature-item {
+    text-align: center;
+  }
+  .feature-item svg { width: 28px; height: 28px; color: var(--gold); margin-bottom: 6px; }
+  .feature-item strong {
+    display: block;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 10px;
+    font-weight: 800;
+    text-transform: uppercase;
+    color: var(--black);
+    margin-bottom: 2px;
+  }
+  .feature-item span { font-size: 10px; color: #666; line-height: 1.3; display: block; }
+
+  .btn-cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: var(--gold);
+    color: var(--black);
+    font-family: 'Montserrat', sans-serif;
+    font-size: 14px;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    padding: 18px 32px;
+    text-decoration: none;
+    transition: all ease-in-out 0.6s;
+    cursor: pointer;
+    border: none;
+  }
+  .btn-cta:hover { background: var(--gold-light); transform: scale(1.05); border-radius: 14px; }
+  .btn-cta-sub {
+    display: block;
+    font-size: 9px;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+    opacity: 0.7;
+    margin-top: 2px;
+  }
+
+  /* BOOK MOCKUP */
+  .hero-book {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .book-wrap {
+    position: relative;
+    width: 300px;
+  }
+  .book-cover {
+    width: 100%;
+    background: var(--black);
+    border-radius: 4px 12px 12px 4px;
+    box-shadow: -8px 8px 30px rgba(0,0,0,0.5), 8px 8px 40px rgba(201,147,58,0.2);
+    overflow: hidden;
+    aspect-ratio: 3/4;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 20px;
+    position: relative;
+  }
+  .book-cover::before {
+    content: '';
+    position: absolute;
+    left: 0; top: 0; bottom: 0;
+    width: 14px;
+    background: linear-gradient(to right, #1a1a1a, #333, #1a1a1a);
+    border-radius: 4px 0 0 4px;
+  }
+  .book-inner { padding-left: 14px; height: 100%; display: flex; flex-direction: column; justify-content: space-between; }
+  .book-subtitle-top {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 7px;
+    font-weight: 600;
+    color: rgba(255,255,255,0.6);
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    line-height: 1.4;
+  }
+  .book-title {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 28px;
+    font-weight: 900;
+    text-transform: uppercase;
+    line-height: 1;
+    color: var(--white);
+  }
+  .book-title span { color: var(--gold); display: block; }
+
+  .book-silhouette {
+    width: 100%;
+    height: 120px;
+    background: radial-gradient(ellipse at bottom, rgba(201,147,58,0.15) 0%, transparent 70%);
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+  }
+  .book-silhouette svg { width: 70px; height: 90px; fill: rgba(255,255,255,0.85); }
+
+  .book-tagline {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 8px;
+    font-weight: 700;
+    color: rgba(255,255,255,0.7);
+    text-align: center;
+    font-style: italic;
+    line-height: 1.4;
+  }
+  .book-tagline span { color: var(--gold); display: block; font-size: 9px; }
+
+  .book-author {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 8px;
+    font-weight: 700;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.5);
+    text-align: center;
+  }
+
+  .book-seal {
+    position: absolute;
+    bottom: -15px;
+    right: -15px;
+    width: 80px;
+    height: 80px;
+    background: var(--gold);
+    border-radius: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border: 3px solid var(--gold-light);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.4);
+    text-align: center;
+  }
+  .book-seal span {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 900;
+    text-transform: uppercase;
+    line-height: 1.1;
+  }
+  .book-seal .seal-label { font-size: 7px; color: var(--black); letter-spacing: 1px; }
+  .book-seal .seal-days { font-size: 28px; color: var(--black); }
+  .book-seal .seal-days2 { font-size: 7px; color: var(--black); letter-spacing: 1px; }
+  .book-seal .seal-cond { font-size: 6px; color: rgba(0,0,0,0.7); }
+
+  /* ── PAIN SECTION ── */
+  .pain {
+    background: var(--off-white);
+    padding: 70px 40px;
+    text-align: center;
+  }
+  .section-title {
+    font-family: 'Montserrat', sans-serif;
+    font-size: clamp(10px, 3vw, 28px);
+    font-weight: 900;
+    text-transform: uppercase;
+    color: var(--black);
+    letter-spacing: 1px;
+    margin-bottom: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+  }
+  .section-title::before,
+  .section-title::after {
+    content: '';
+    height: 2px;
+    width: 60px;
+    background: var(--gold);
+    display: block;
+  }
+  .section-title span { color: var(--gold); }
+
+  .pain-grid {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 20px;
+    max-width: 1100px;
+    margin: 0 auto 40px;
+  }
+  .pain-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+  .pain-icon {
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    border: 2px solid var(--gold);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--gold);
+  }
+  .pain-icon svg { width: 24px; height: 24px; }
+  .pain-item p {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 10px;
+    font-weight: 800;
+    text-transform: uppercase;
+    color: var(--black);
+    text-align: center;
+    line-height: 1.4;
+    letter-spacing: 0.5px;
+  }
+
+  .pain-cta-bar {
+    background: var(--black);
+    color: var(--white);
+    display: inline-block;
+    padding: 14px 40px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    max-width: 600px;
+    margin: 0 auto;
+  }
+  .pain-cta-bar span { color: var(--gold); font-weight: 900; }
+
+  /* ── LEARN SECTION ── */
+  .learn {
+    background: var(--white);
+    padding: 70px 40px;
+    text-align: center;
+  }
+  .learn-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px;
+    max-width: 1100px;
+    margin: 0 auto 30px;
+  }
+  .learn-row2 {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px;
+    max-width: 880px;
+    margin: 0 auto;
+  }
+  .learn-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+  }
+  .learn-icon {
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    border: 2px solid #ddd;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--gold);
+    transition: border-color 0.2s;
+  }
+  .learn-item:hover .learn-icon { border-color: var(--gold); }
+  .learn-icon svg { width: 26px; height: 26px; }
+  .learn-item p {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 10px;
+    font-weight: 800;
+    text-transform: uppercase;
+    color: var(--black);
+    text-align: center;
+    line-height: 1.4;
+    letter-spacing: 0.5px;
+  }
+
+  /* ── CHAPTERS DARK ── */
+  .chapters {
+    background: var(--black);
+    padding: 70px 40px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: center;
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+  .chapters-wrap {
+    background: var(--black);
+    padding: 0;
+  }
+  .chapters h2 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: clamp(28px, 4vw, 32px);
+    font-weight: 900;
+    text-transform: uppercase;
+    color: var(--white);
+    line-height: 1.1;
+    margin-bottom: 30px;
+  }
+  .chapters h2 span { color: var(--gold); }
+
+  .chapter-list {
+    columns: 2;
+    column-gap: 20px;
+    list-style: none;
+  }
+  .chapter-list li {
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+    color: rgba(255,255,255,0.75);
+    font-size: 13px;
+    margin-bottom: 10px;
+    break-inside: avoid;
+    line-height: 1.4;
+  }
+  .chapter-list li::before {
+    content: '';
+    width: 16px;
+    height: 16px;
+    min-width: 16px;
+    border-radius: 50%;
+    border: 2px solid var(--gold);
+    background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23C9933A' stroke-width='3'%3E%3Cpolyline points='20 6 9 17 4 12'/%3E%3C/svg%3E") center/10px no-repeat;
+    margin-top: 2px;
+  }
+
+  .chapters-visual {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .sunset-img {
+    width: 100%;
+    border-radius: 4px;
+    background: linear-gradient(to bottom, #1a1a2e 0%, #16213e 30%, #e67e22 70%, #f39c12 90%, #f1c40f 100%);
+    aspect-ratio: 4/3;
+    position: relative;
+    overflow: hidden;
+  }
+  .sunset-img .horizon-person {
+    position: absolute;
+    bottom: 20%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 40px;
+  }
+
+  /* ── AUTHOR ── */
+  .author-section {
+    background: var(--off-white);
+    padding: 60px 40px;
+  }
+  .author-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: auto 1fr 1fr;
+    gap: 50px;
+    align-items: center;
+  }
+  .author-avatar {
+    width: 140px;
+    height: 140px;
+    border-radius: 50%;
+    background: var(--black);
+    overflow: hidden;
+    border: 4px solid var(--gold);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+  .author-avatar svg { width: 90px; height: 90px; fill: rgba(255,255,255,0.4); }
+  .author-info h3 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 22px;
+    font-weight: 900;
+    text-transform: uppercase;
+    color: var(--black);
+    margin-bottom: 12px;
+  }
+  .author-info p { font-size: 14px; color: #555; line-height: 1.7; }
+  .author-info p strong { color: var(--black); }
+
+  .guarantee-box {
+    background: var(--white);
+    border: 2px solid var(--gold);
+    border-radius: 4px;
+    padding: 30px;
+    display: flex;
+    gap: 20px;
+    align-items: flex-start;
+  }
+  .guarantee-box svg { width: 50px; height: 50px; color: var(--gold); flex-shrink: 0; }
+  .guarantee-box h4 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 18px;
+    font-weight: 900;
+    text-transform: uppercase;
+    color: var(--black);
+    margin-bottom: 10px;
+  }
+  .guarantee-box p { font-size: 13px; color: #555; line-height: 1.6; }
+  .guarantee-box p strong { color: var(--black); }
+
+  /* ── FOOTER CTA ── */
+  .footer-cta {
+    background: var(--dark2);
+    padding: 70px 40px;
+    text-align: center;
+  }
+  .footer-cta-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    gap: 40px;
+    align-items: center;
+  }
+  .footer-book-small {
+    width: 100px;
+    aspect-ratio: 3/4;
+    background: var(--black);
+    border-radius: 3px 8px 8px 3px;
+    box-shadow: -4px 4px 16px rgba(0,0,0,0.6);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 8px;
+    position: relative;
+  }
+  .footer-book-small::before { content:''; position:absolute; left:0;top:0;bottom:0;width:8px; background:linear-gradient(to right,#111,#2a2a2a,#111); border-radius:3px 0 0 3px; }
+  .footer-book-small span {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 900;
+    font-size: 8px;
+    text-transform: uppercase;
+    color: var(--white);
+    text-align: center;
+    line-height: 1.1;
+    z-index: 1;
+  }
+  .footer-book-small span.gold { color: var(--gold); }
+
+  .footer-cta-text h2 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: clamp(28px, 4vw, 42px);
+    font-weight: 900;
+    text-transform: uppercase;
+    color: var(--white);
+    line-height: 1.1;
+    margin-bottom: 4px;
+  }
+  .footer-cta-text h2 span { color: var(--gold); }
+  .footer-cta-text p { color: rgba(255,255,255,0.5); font-size: 12px; letter-spacing: 2px; text-transform: uppercase; font-family: 'Montserrat', sans-serif; }
+
+  .footer-perks {
+    display: flex;
+    gap: 24px;
+    justify-content: center;
+    margin: 30px 0;
+    flex-wrap: wrap;
+  }
+  .perk-item {
+    min-width: 169px;
+    max-width: 200px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+    color: rgba(255,255,255,0.6);
+  }
+  .perk-item svg { width: 28px; height: 28px; color: var(--gold); }
+  .perk-item span { font-family: 'Montserrat', sans-serif; font-size: 9px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; text-align: center; line-height: 1.3; }
+
+  .price-block {
+    text-align: right;
+  }
+  .price-from {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 12px;
+    color: rgba(255,255,255,0.4);
+    text-decoration: line-through;
+  }
+  .price-now {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 900;
+    color: var(--white);
+    line-height: 1;
+  }
+  .price-now .currency { font-size: 20px; vertical-align: super; }
+  .price-now .amount { font-size: 64px; }
+  .price-now .cents { font-size: 28px; vertical-align: super; }
+  .price-now .label { font-size: 10px; color: rgba(255,255,255,0.4); display: block; text-transform: uppercase; letter-spacing: 1px; }
+
+  .btn-cta-final {
+    display: block;
+    background: var(--gold);
+    color: var(--black);
+    font-family: 'Montserrat', sans-serif;
+    font-size: 14px;
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    padding: 18px 32px;
+    text-decoration: none;
+    text-align: center;
+    margin-top: 16px;
+    cursor: pointer;
+    border: none;
+    transition: background 0.2s;
+  }
+  .btn-cta-final:hover { background: var(--gold-light); }
+
+  .secure-badges {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    margin-top: 10px;
+    flex-wrap: wrap;
+  }
+  .secure-badges span {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 9px;
+    color: rgba(255,255,255,0.4);
+    letter-spacing: 1px;
+    text-transform: uppercase;
+  }
+  .card-badge {
+    background: rgba(255,255,255,0.08);
+    border-radius: 3px;
+    padding: 2px 6px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 8px;
+    font-weight: 700;
+    color: rgba(255,255,255,0.5);
+    letter-spacing: 1px;
+    text-transform: uppercase;
+  }
+  .footer-lock {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    margin-top: 8px;
+    color: rgba(255,255,255,0.3);
+    font-size: 11px;
+  }
+  .footer-lock svg { width: 14px; height: 14px; }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 900px) {
+    .footer-cta-text {flex-direction: column; }
+    .section-title {flex-direction: column;font-size: 0.8rem;}
+    .chapter-list {columns: 1;}
+    .chapters h2 {text-align: center;}
+    .footer-book-small {display: none;}
+    .author-info h3 { text-align: center;}
+    .topbar-tagline { text-align: center;}
+    .hero { grid-template-columns: 1fr; text-align: center; }
+    .hero-features { grid-template-columns: repeat(2, 1fr); }
+    .pain-grid { grid-template-columns: repeat(3, 1fr); }
+    .learn-grid { grid-template-columns: repeat(2, 1fr); }
+    .learn-row2 { grid-template-columns: repeat(2, 1fr); }
+    .chapters { grid-template-columns: 1fr; }
+    .chapters-visual { display: none; }
+    .author-inner { grid-template-columns: 1fr; align-items: center; justify-items: center;}
+    .footer-cta-inner { grid-template-columns: 1fr; text-align: center; }
+    .price-block { text-align: center; }
+    .topbar { flex-direction: column; gap: 8px; text-align: center; }
+  }
+  @media (max-width: 600px) {
+    .pain-grid { grid-template-columns: repeat(2, 1fr); }
+    .hero, .pain, .learn, .chapters-wrap, .author-section, .footer-cta { padding-left: 20px; padding-right: 20px; }
+    .topbar { padding: 10px 20px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- TOPBAR -->
+<header class="topbar">
+  <div class="topbar-logo">
+    <img src="https://res.cloudinary.com/dhcfhgn33/image/upload/w_800,c_fill,q_auto,f_auto/v1781616890/LogoElara3_pi2wng.png" alt="Reconstrução Pessoal" style="width: 40px; height: 40px;"/>
+    <h2 class="topbar-tagline">Reconstrução Pessoal</h2>
+  </div>
+  <div class="topbar-tagline">
+    TRANSFORME QUEM VOCÊ É HOJE E<br>
+    CONSTRUA <span>A VIDA QUE SEMPRE SONHOU</span>
+  </div>
+</header>
+
+<!-- HERO -->
+<section style="background:var(--white); padding: 0 0 0 0;">
+<div class="hero">
+  <div class="hero-left">
+    <div class="hero-badge">📖 Ebook Completo</div>
+    <h1 data-aos="fade-right">Reconstrução<span>Pessoal</span></h1>
+    <p class="hero-sub">O método prático para vencer a procrastinação, desenvolver disciplina e transformar sua vida.</p>
+    <p class="hero-desc">Um guia passo a passo para você sair da estagnação, criar hábitos poderosos, melhorar sua produtividade, organizar suas finanças e construir um futuro extraordinário.</p>
+
+    <div class="hero-features">
+      <div class="feature-item">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><line x1="9" y1="9" x2="15" y2="9"/><line x1="9" y1="12" x2="15" y2="12"/><line x1="9" y1="15" x2="12" y2="15"/></svg>
+        <strong>21 Capítulos</strong>
+        <span>Conteúdo completo e transformador</span>
+      </div>
+      <div class="feature-item">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"/></svg>
+        <strong>Exercícios</strong>
+        <span>Práticos para aplicar no seu dia a dia</span>
+      </div>
+      <div class="feature-item">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+        <strong>Estratégias</strong>
+        <span>Métodos testados e comprovados</span>
+      </div>
+      <div class="feature-item">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 12V22H4V12"/><path d="M22 7H2v5h20V7z"/><path d="M12 22V7"/><path d="M12 7H7.5a2.5 2.5 0 010-5C11 2 12 7 12 7z"/><path d="M12 7h4.5a2.5 2.5 0 000-5C13 2 12 7 12 7z"/></svg>
+        <strong>Bônus</strong>
+        <span>Materiais extras exclusivos</span>
+      </div>
+    </div>
+
+    <a href="https://pay.hotmart.com/M106345411H?bid=1781618227846" class="btn-cta" target="_blank" data-aos="fade-right"
+     data-aos-offset="300"
+     data-aos-duration="1500"
+     data-aos-easing="ease-in-sine">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0110 0v4"/></svg>
+      <div>
+        QUERO COMEÇAR MINHA TRANSFORMAÇÃO
+        <span class="btn-cta-sub">ACESSO IMEDIATO APÓS A COMPRA</span>
+      </div>
+    </a>
+  </div>
+
+  <div class="hero-book">
+    <div class="book-wrap">
+      <img style="width: 100%;" src="https://res.cloudinary.com/dhcfhgn33/image/upload/w_800,c_fill,q_auto,f_auto/v1781616890/Mockup_Livro_sg2cio.png" alt="Rafael Albuquerque" />
+      <div class="book-cover" style="display: none;">
+        <div class="book-inner" style="display: none;">
+          <div class="book-subtitle-top">O MÉTODO PRÁTICO PARA VENCER A PROCRASTINAÇÃO,<br>DESENVOLVER DISCIPLINA, CONSTRUIR RIQUEZA<br>E TRANSFORMAR SUA VIDA</div>
+          <div class="book-title">Reconstrução<span>Pessoal</span></div>
+          <div class="book-silhouette">
+            <svg viewBox="0 0 100 140" xmlns="http://www.w3.org/2000/svg">
+              <!-- simple walking person silhouette -->
+              <ellipse cx="50" cy="15" rx="10" ry="13"/>
+              <path d="M50 28 Q40 55 35 80 L50 78 L65 80 Q60 55 50 28Z"/>
+              <path d="M35 80 L25 110 L38 110 L50 85"/>
+              <path d="M65 80 L75 110 L62 110 L50 85"/>
+              <!-- puzzle pieces floating -->
+              <g fill="rgba(201,147,58,0.6)" transform="translate(10,20)">
+                <rect x="0" y="0" width="12" height="12" rx="2"/>
+                <rect x="14" y="5" width="12" height="12" rx="2"/>
+                <rect x="3" y="15" width="12" height="12" rx="2"/>
+              </g>
+              <g fill="rgba(201,147,58,0.6)" transform="translate(65,25)">
+                <rect x="0" y="0" width="12" height="12" rx="2"/>
+                <rect x="14" y="5" width="12" height="12" rx="2"/>
+                <rect x="3" y="15" width="12" height="12" rx="2"/>
+              </g>
+            </svg>
+          </div>
+          <div class="book-tagline">
+            <span>Você não precisa ser uma pessoa nova.</span>
+            Precisa se Reconstruir.
+          </div>
+          <div class="book-author">RAFAEL ALBUQUERQUE</div>
+        </div>
+      </div>
+      <div class="book-seal" style="display: none;">
+        <span class="seal-label">GARANTIA</span>
+        <span class="seal-days">7</span>
+        <span class="seal-days2">DIAS</span>
+        <span class="seal-cond">INCONDICIONAL</span>
+      </div>
+    </div>
+  </div>
+</div>
+</section>
+
+<!-- PAIN POINTS -->
+<section class="pain">
+  <h2 class="section-title">Você se <span>identifica</span> com alguma dessas situações?</h2>
+  <div class="pain-grid">
+    <div class="pain-item">
+      <div class="pain-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+      </div>
+      <p data-aos="zoom-in-up"   data-aos-easing="ease-out-cubic"
+     data-aos-duration="1000">Procrastina e adia tarefas importantes</p>
+    </div>
+    <div class="pain-item">
+      <div class="pain-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+      </div>
+      <p data-aos="zoom-in-up" data-aos-easing="ease-out-cubic" data-aos-duration="1000">Sente que sua vida está parada</p>
+    </div>
+    <div class="pain-item">
+      <div class="pain-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M8 14s1.5 2 4 2 4-2 4-2"/><line x1="9" y1="9" x2="9.01" y2="9"/><line x1="15" y1="9" x2="15.01" y2="9"/></svg>
+      </div>
+      <p data-aos="zoom-in-up" data-aos-easing="ease-out-cubic" data-aos-duration="1000">Sabe o que fazer, mas não consegue agir</p>
+    </div>
+    <div class="pain-item">
+      <div class="pain-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="1" y="6" width="22" height="13" rx="2"/><path d="M23 13H1"/><path d="M5 6V4"/><path d="M19 6V4"/></svg>
+      </div>
+      <p data-aos="zoom-in-up" data-aos-easing="ease-out-cubic" data-aos-duration="1000">Falta disciplina e consistência</p>
+    </div>
+    <div class="pain-item">
+      <div class="pain-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/></svg>
+      </div>
+      <p data-aos="zoom-in-up" data-aos-easing="ease-out-cubic" data-aos-duration="1000">Quer crescer financeiramente, mas não sabe por onde começar</p>
+    </div>
+    <div class="pain-item">
+      <div class="pain-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+      </div>
+      <p data-aos="zoom-in-up" data-aos-easing="ease-out-cubic" data-aos-duration="1000">Deseja uma vida melhor, mas não sabe por onde começar</p>
+    </div>
+  </div>
+  <div class="pain-cta-bar">⭐ A boa notícia? Isso pode mudar <span>HOJE!</span></div>
+</section>
+
+<!-- WHAT YOU'LL LEARN -->
+<section class="learn">
+  <h2 class="section-title">O que você <span>vai aprender</span></h2>
+  <div class="learn-grid">
+    <div class="learn-item">
+      <div class="learn-icon">
+        <svg viewBox="0 0 24 24" fill="none"  stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+      </div>
+      <p data-aos="fade-right" data-aos-easing="ease-in-sine" data-aos-duration="1000">Vencer a Procrastinação</p>
+    </div>
+    <div class="learn-item">
+      <div class="learn-icon">
+        <svg viewBox="0 0 24 24" fill="none"  stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/></svg>
+      </div>
+      <p data-aos="fade-right" data-aos-easing="ease-in-sine" data-aos-duration="1000">Criar Hábitos Poderosos</p>
+    </div>
+    <div class="learn-item">
+      <div class="learn-icon">
+        <svg viewBox="0 0 24 24" fill="none"  stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+      </div>
+      <p data-aos="fade-right" data-aos-easing="ease-in-sine" data-aos-duration="1000">Organizar seu Tempo e suas Prioridades</p>
+    </div>
+    <div class="learn-item">
+      <div class="learn-icon">
+        <svg viewBox="0 0 24 24" fill="none"  stroke="currentColor" stroke-width="2"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/></svg>
+      </div>
+      <p data-aos="fade-right" data-aos-easing="ease-in-sine" data-aos-duration="1000">Inteligência Financeira</p>
+    </div>
+  </div>
+  <div class="learn-row2">
+    <div class="learn-item">
+      <div class="learn-icon">
+        <svg viewBox="0 0 24 24" fill="none"  stroke="currentColor" stroke-width="2"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg>
+      </div>
+      <p data-aos="fade-right" data-aos-easing="ease-in-sine" data-aos-duration="1000">Aumentar sua Renda e Gerar Mais Valor</p>
+    </div>
+    <div class="learn-item">
+      <div class="learn-icon">
+        <svg viewBox="0 0 24 24" fill="none"  stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg>
+      </div>
+      <p data-aos="fade-right" data-aos-easing="ease-in-sine" data-aos-duration="1000">Desenvolver Inteligência Emocional</p>
+    </div>
+    <div class="learn-item">
+      <div class="learn-icon">
+        <svg viewBox="0 0 24 24" fill="none"  stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/></svg>
+      </div>
+      <p data-aos="fade-right" data-aos-easing="ease-in-sine" data-aos-duration="1000">Relacionamentos e Networking</p>
+    </div>
+    <div class="learn-item">
+      <div class="learn-icon">
+        <svg viewBox="0 0 24 24" fill="none"  stroke="currentColor" stroke-width="2"><path d="M18 8h1a4 4 0 010 8h-1"/><path d="M2 8h16v9a4 4 0 01-4 4H6a4 4 0 01-4-4V8z"/><line x1="6" y1="1" x2="6" y2="4"/><line x1="10" y1="1" x2="10" y2="4"/><line x1="14" y1="1" x2="14" y2="4"/></svg>
+      </div>
+      <p data-aos="fade-right" data-aos-easing="ease-in-sine" data-aos-duration="1000">Empreendedorismo e Oportunidades</p>
+    </div>
+  </div>
+</section>
+
+<!-- CHAPTERS DARK -->
+<div style="background: var(--black);">
+<div class="chapters">
+  <div>
+    <h2>Mais de 21 Capítulos<br>de <span>Transformação Pessoal</span></h2>
+    <ul class="chapter-list">
+      <li>Vencendo a Procrastinação</li>
+      <li>Construindo Hábitos Poderosos</li>
+      <li>Disciplina e Consistência</li>
+      <li>Foco Profundo</li>
+      <li>Aprendizado Contínuo</li>
+      <li>Organização Pessoal</li>
+      <li>Gestão do Tempo</li>
+      <li>Inteligência Financeira</li>
+      <li>Aumentando Sua Renda</li>
+      <li>Metas Inteligentes</li>
+      <li>Resiliência</li>
+      <li>Relacionamentos e Networking</li>
+      <li>Liderança Pessoal</li>
+      <li>Mentalidade de Prosperidade</li>
+      <li>O Plano de Reconstrução Pessoal</li>
+      <li>Comunicação e Persuasão</li>
+      <li>Inteligência Emocional</li>
+      <li>Construindo um Negócio do Zero</li>
+      <li>O Caminho para o Primeiro Milhão</li>
+      <li>Seu Plano de Vida para os Próximos 10 Anos</li>
+      <li>E muito mais!</li>
+    </ul>
+  </div>
+  <div class="chapters-visual">
+    <img src="https://res.cloudinary.com/dhcfhgn33/image/upload/w_800,c_fill,q_auto,f_auto/v1781616890/Eu6trans_tyzr7i.png" alt="Rafael Albuquerque" style="width: 100%;" />
+    <!-- Sunset scene SVG -->
+    <svg viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg" width="100%" style="max-width:400px; border-radius:6px; display: none;">
+      <defs>
+        <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0%" stop-color="#0d1b2a"/>
+          <stop offset="50%" stop-color="#1a3a5c"/>
+          <stop offset="80%" stop-color="#c0622a"/>
+          <stop offset="100%" stop-color="#e8a030"/>
+        </linearGradient>
+        <linearGradient id="ground" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0%" stop-color="#1a1a1a"/>
+          <stop offset="100%" stop-color="#0a0a0a"/>
+        </linearGradient>
+      </defs>
+      <rect width="400" height="300" fill="url(#sky)"/>
+      <!-- Sun -->
+      <circle cx="200" cy="195" r="45" fill="#f39c12" opacity="0.9"/>
+      <circle cx="200" cy="195" r="35" fill="#f1c40f"/>
+      <!-- Horizon glow -->
+      <ellipse cx="200" cy="210" rx="180" ry="30" fill="#e67e22" opacity="0.3"/>
+      <!-- Ground -->
+      <rect x="0" y="230" width="400" height="70" fill="url(#ground)"/>
+      <!-- Silhouette person -->
+      <g fill="#0a0a0a">
+        <circle cx="200" cy="200" r="10"/>
+        <path d="M200 210 Q190 230 185 250 L200 248 L215 250 Q210 230 200 210Z"/>
+        <path d="M185 250 L175 275 L188 275 L200 252"/>
+        <path d="M215 250 L225 275 L212 275 L200 252"/>
+        <!-- Arm out -->
+        <path d="M195 225 L175 215" stroke="#0a0a0a" stroke-width="6" stroke-linecap="round"/>
+      </g>
+    </svg>
+  </div>
+</div>
+</div>
+
+<!-- AUTHOR + GUARANTEE -->
+<section class="author-section">
+  <div class="author-inner">
+    <div class="author-avatar">
+      <img style="width: 100%;" src="https://res.cloudinary.com/dhcfhgn33/image/upload/w_800,c_fill,q_auto,f_auto/v1781616890/Eu6trans_tyzr7i.png" alt="Rafael Albuquerque" />
+    </div>
+    <div class="author-info">
+      <h3>Sobre o Autor</h3>
+      <p><strong>Rafael Albuquerque</strong> é especialista em desenvolvimento pessoal e designer. Através do método Reconstrução Pessoal, já ajudou milhares de pessoas a mudarem de vida com práticas simples, aplicáveis e que geram resultados reais.</p>
+    </div>
+    <div class="guarantee-box">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+        <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+        <polyline points="9 12 11 14 15 10"/>
+      </svg>
+      <div>
+        <h4>Garantia de 7 Dias</h4>
+        <p>Você tem <strong>7 dias</strong> para conhecer o conteúdo e aplicar as estratégias. Se por qualquer motivo não ficar satisfeito, basta solicitar o reembolso completo. <strong>Sem perguntas. Sem burocracia.</strong></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER CTA -->
+<section class="footer-cta">
+  <div class="footer-cta-text" style="display: flex; align-items: center;    justify-content: space-evenly;">
+      <img src="https://res.cloudinary.com/dhcfhgn33/image/upload/w_800,c_fill,q_auto,f_auto/v1781616890/Mockup_Livro_sg2cio.png" alt="livro" style="width: 20%;"/>
+      <div style="display: flex; flex-direction: column;">
+      <h2>Comece sua Transformação<br><span>HOJE</span> Mesmo!</h2>
+      <p>Acesso imediato &amp; 100% seguro</p>
+      <div class="footer-perks">
+        <div class="perk-item">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><line x1="9" y1="9" x2="15" y2="9"/><line x1="9" y1="12" x2="15" y2="12"/></svg>
+          <span>Ebook Completo<br>21 Capítulos</span>
+        </div>
+        <div class="perk-item">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+          <span>Acesso Imediato<br>Download liberado</span>
+        </div>
+        <div class="perk-item">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg>
+          <span>Leia onde quiser<br>Celular, tablet ou computador</span>
+        </div>
+        <div class="perk-item">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 8h1a4 4 0 010 8h-1"/><path d="M2 8h16v9a4 4 0 01-4 4H6a4 4 0 01-4-4V8z"/><line x1="6" y1="1" x2="6" y2="4"/><line x1="10" y1="1" x2="10" y2="4"/><line x1="14" y1="1" x2="14" y2="4"/></svg>
+          <span>Acesso Vitalício<br>Seu para sempre</span>
+        </div>
+      </div>
+      </div>
+    </div>
+    <div class="price-block">
+      <div class="price-from">DE R$ 97,00</div>
+      <div class="price-now">
+        <span class="label">POR APENAS</span>
+        <div><span class="currency">R$</span><span class="amount">47</span><span class="cents">,00</span></div>
+      </div>
+      <a href="https://pay.hotmart.com/M106345411H?bid=1781618227846" class="btn-cta-final" target="_blank">QUERO MEU EBOOK AGORA</a>
+      <div class="secure-badges">
+        <span>🔒</span>
+        <span class="card-badge">VISA</span>
+        <span class="card-badge">MASTER</span>
+        <span class="card-badge">PIX</span>
+        <span class="card-badge">BOLETO</span>
+      </div>
+      <div class="footer-lock">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0110 0v4"/></svg>
+        Compra 100% segura
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+  AOS.init();
+</script>
+</body>
+</html>
