@@ -9,7 +9,6 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-  <!-- Facebook Pixel Code --><script>!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js'); fbq('init', '181832803526691'); fbq('track', 'PageView');</script><noscript> <img height="1" width="1" src="https://www.facebook.com/tr?id=181832803526691&ev=PageView&noscript=1"/></noscript><!-- End Facebook Pixel Code -->
 <style>
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
@@ -30,6 +29,126 @@
     color: var(--text);
     background: var(--white);
     overflow-x: hidden;
+  }
+
+  .preview{
+    background:#fff;
+    padding:70px 40px;
+    text-align:center;
+}
+
+.preview-text{
+    max-width:700px;
+    margin:0 auto 40px;
+    color:#666;
+    line-height:1.7;
+    font-size:15px;
+}
+
+.preview-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:25px;
+    max-width:1100px;
+    margin:auto;
+}
+
+.preview-item{
+    overflow:hidden;
+    border-radius:10px;
+    box-shadow:0 12px 35px rgba(0,0,0,.15);
+    transition:.3s;
+}
+
+.preview-item:hover{
+    transform:translateY(-8px);
+}
+
+.preview-item img{
+    width:100%;
+    display:block;
+    cursor: pointer;
+  }
+
+  /* Modal */
+  .modal {
+    display: none;
+    position: fixed;
+    z-index: 9999;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.9);
+    overflow: hidden;
+  }
+
+  .modal-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: scale(1);
+    max-width: 90%;
+    max-height: 90%;
+    object-fit: contain;
+    transition: transform 0.3s ease;
+    user-select: none;
+    -webkit-user-drag: none;
+    -khtml-user-drag: none;
+    -moz-user-drag: none;
+    -o-user-drag: none;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .close-btn {
+    position: absolute;
+    top: 20px;
+    right: 35px;
+    color: #f1f1f1;
+    font-size: 40px;
+    font-weight: bold;
+    cursor: pointer;
+    z-index: 10000;
+  }
+
+  .close-btn:hover,
+  .close-btn:focus {
+    color: #bbb;
+    text-decoration: none;
+  }
+
+  .zoom-controls {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 10px;
+    z-index: 10000;
+  }
+
+  .zoom-btn {
+    background: var(--gold);
+    border: none;
+    color: var(--black);
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.2s;
+  }
+
+  .zoom-btn:hover {
+    background: var(--gold-light);
+  }
+
+  .price-desc {
+    font-size: 12px;
+    color: var(--gray);
+    line-height: 1.4;
   }
 
   /* ── TOPBAR ── */
@@ -91,7 +210,7 @@
 
   .hero h1 {
     font-family: 'Montserrat', sans-serif;
-    font-size: clamp(32px, 6vw, 72px);
+    font-size: clamp(32px, 5vw, 72px);
     font-weight: 900;
     line-height: 1;
     text-transform: uppercase;
@@ -690,6 +809,7 @@
 
   /* ── RESPONSIVE ── */
   @media (max-width: 900px) {
+    .preview-grid{grid-template-columns:1fr;}
     .footer-cta-text {flex-direction: column; }
     .section-title {flex-direction: column;font-size: 0.8rem;}
     .chapter-list {columns: 1;}
@@ -735,9 +855,9 @@
 <div class="hero">
   <div class="hero-left">
     <div class="hero-badge">📖 Ebook Completo</div>
-    <h1 data-aos="fade-right">Reconstrução<span>Pessoal</span></h1>
-    <p class="hero-sub">O método prático para vencer a procrastinação, desenvolver disciplina e transformar sua vida.</p>
-    <p class="hero-desc">Um guia passo a passo para você sair da estagnação, criar hábitos poderosos, melhorar sua produtividade, organizar suas finanças e construir um futuro extraordinário.</p>
+    <h1 data-aos="fade-right">Reconstrua sua vida<span>um hábito de cada vez.</span></h1>
+    <p class="hero-sub">O guia prático para criar hábitos duradouros, desenvolver disciplina e assumir o controle da sua vida.</p>
+    <p class="hero-desc">Mais de 200 páginas de estratégias práticas e 2 desafios para desenvolver disciplina, fortalecer sua mentalidade e construir hábitos que realmente duram.</p>
 
     <div class="hero-features">
       <div class="feature-item">
@@ -753,12 +873,12 @@
       <div class="feature-item">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
         <strong>Estratégias</strong>
-        <span>Métodos testados e comprovados</span>
+        <span>Técnicas aplicáveis ao dia a dia</span>
       </div>
       <div class="feature-item">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 12V22H4V12"/><path d="M22 7H2v5h20V7z"/><path d="M12 22V7"/><path d="M12 7H7.5a2.5 2.5 0 010-5C11 2 12 7 12 7z"/><path d="M12 7h4.5a2.5 2.5 0 000-5C13 2 12 7 12 7z"/></svg>
-        <strong>Bônus</strong>
-        <span>Materiais extras exclusivos</span>
+        <strong>200+ páginas</strong>
+        <span>Conteúdo completo</span>
       </div>
     </div>
 
@@ -821,7 +941,8 @@
 
 <!-- PAIN POINTS -->
 <section class="pain">
-  <h2 class="section-title">Você se <span>identifica</span> com alguma dessas situações?</h2>
+  <h2 class="section-title">Você se <span>identifica</span></h2>
+  <h2 class="section-title"> com alguma dessas situações?</h2>
   <div class="pain-grid">
     <div class="pain-item">
       <div class="pain-icon">
@@ -921,6 +1042,33 @@
   </div>
 </section>
 
+<!-- PREVIEW DO EBOOK -->
+<section class="preview">
+  <h2 class="section-title">
+    Veja algumas <span>páginas do eBook</span>
+  </h2>
+
+  <p class="preview-text">
+    Antes de comprar, confira algumas páginas do conteúdo e veja a qualidade do material que irá receber.
+  </p>
+
+  <div class="preview-grid">
+
+    <div class="preview-item">
+      <img src="https://res.cloudinary.com/dhcfhgn33/image/upload/v1782856067/Captura_de_tela_2026-06-30_184227_yzn7aw.png" alt="Página 1 do Ebook">
+    </div>
+
+    <div class="preview-item">
+      <img src="https://res.cloudinary.com/dhcfhgn33/image/upload/v1782856824/Captura_de_tela_2026-06-30_184008_cc0lws.png" alt="Página 2 do Ebook">
+    </div>
+
+    <div class="preview-item">
+      <img src="https://res.cloudinary.com/dhcfhgn33/image/upload/v1782856067/Captura_de_tela_2026-06-30_184111_w8kwiy.png" alt="Página 3 do Ebook">
+    </div>
+
+  </div>
+</section>
+
 <!-- CHAPTERS DARK -->
 <div style="background: var(--black);">
 <div class="chapters">
@@ -989,7 +1137,7 @@
 </div>
 
 <!-- AUTHOR + GUARANTEE -->
-<section class="author-section">
+<section class="author-section" style="display: none;">
   <div class="author-inner">
     <div class="author-avatar">
       <img style="width: 100%;" src="https://res.cloudinary.com/dhcfhgn33/image/upload/w_800,c_fill,q_auto,f_auto/v1781616890/Eu6trans_tyzr7i.png" alt="Rafael Albuquerque" />
@@ -1016,12 +1164,12 @@
   <div class="footer-cta-text" style="display: flex; align-items: center;    justify-content: space-evenly;">
       <img src="https://res.cloudinary.com/dhcfhgn33/image/upload/w_800,c_fill,q_auto,f_auto/v1781616890/Mockup_Livro_sg2cio.png" alt="livro" style="width: 20%;"/>
       <div style="display: flex; flex-direction: column;">
-      <h2>Comece sua Transformação<br><span>HOJE</span> Mesmo!</h2>
+      <h2>Seu <span>FUTURO</span> começa com uma decisão.<br></h2>
       <p>Acesso imediato &amp; 100% seguro</p>
       <div class="footer-perks">
         <div class="perk-item">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><line x1="9" y1="9" x2="15" y2="9"/><line x1="9" y1="12" x2="15" y2="12"/></svg>
-          <span>Ebook Completo<br>21 Capítulos</span>
+          <span>Ebook Completo<br>+200 páginas</span>
         </div>
         <div class="perk-item">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
@@ -1043,6 +1191,7 @@
       <div class="price-now">
         <span class="label">POR APENAS</span>
         <div><span class="currency">R$</span><span class="amount">47</span><span class="cents">,00</span></div>
+        <p class="price-desc">Menos do que o valor de uma pizza para investir em você.</p>
       </div>
       <a href="https://pay.hotmart.com/M106345411H?bid=1781618227846" class="btn-cta-final" target="_blank">QUERO MEU EBOOK AGORA</a>
       <div class="secure-badges">
@@ -1060,8 +1209,141 @@
   </div>
 </section>
 
+<!-- Modal -->
+<div id="imageModal" class="modal">
+  <span class="close-btn">&times;</span>
+  <img id="modalImg" class="modal-content" src="" alt="Imagem em tamanho real">
+  <div class="zoom-controls">
+    <button class="zoom-btn" id="zoomOut">-</button>
+    <button class="zoom-btn" id="zoomReset">1x</button>
+    <button class="zoom-btn" id="zoomIn">+</button>
+  </div>
+</div>
+
 <script>
   AOS.init();
+
+  // Modal functionality
+  const modal = document.getElementById('imageModal');
+  const modalImg = document.getElementById('modalImg');
+  const closeBtn = document.querySelector('.close-btn');
+  const zoomInBtn = document.getElementById('zoomIn');
+  const zoomOutBtn = document.getElementById('zoomOut');
+  const zoomResetBtn = document.getElementById('zoomReset');
+  
+  let currentScale = 1;
+  let offsetX = 0;
+  let offsetY = 0;
+  let isDragging = false;
+  let startX = 0;
+  let startY = 0;
+
+  // Open modal when clicking on preview images
+  document.querySelectorAll('.preview-item img').forEach(img => {
+    img.addEventListener('click', () => {
+      modal.style.display = 'block';
+      modalImg.src = img.src;
+      resetImage();
+    });
+  });
+
+  // Reset image to center and scale 1
+  function resetImage() {
+    currentScale = 1;
+    offsetX = 0;
+    offsetY = 0;
+    updateImageTransform();
+  }
+
+  // Close modal when clicking X
+  closeBtn.addEventListener('click', () => {
+    modal.style.display = 'none';
+  });
+
+  // Close modal when clicking outside the image
+  modal.addEventListener('click', (e) => {
+    if (e.target === modal) {
+      modal.style.display = 'none';
+    }
+  });
+
+  // Update image transform
+  function updateImageTransform() {
+    modalImg.style.transform = `translate(-50%, -50%) translate(${offsetX}px, ${offsetY}px) scale(${currentScale})`;
+    zoomResetBtn.textContent = `${currentScale.toFixed(1)}x`;
+  }
+
+  // Zoom in
+  zoomInBtn.addEventListener('click', () => {
+    currentScale += 0.5;
+    updateImageTransform();
+  });
+
+  // Zoom out
+  zoomOutBtn.addEventListener('click', () => {
+    if (currentScale > 0.5) {
+      currentScale -= 0.5;
+    }
+    if (currentScale <= 1) {
+      resetImage();
+    } else {
+      updateImageTransform();
+    }
+  });
+
+  // Reset zoom
+  zoomResetBtn.addEventListener('click', resetImage);
+
+  // Mouse drag events
+  modalImg.addEventListener('mousedown', (e) => {
+    if (currentScale > 1) {
+      isDragging = true;
+      startX = e.clientX - offsetX;
+      startY = e.clientY - offsetY;
+      modalImg.style.transition = 'none';
+      modalImg.style.cursor = 'grabbing';
+    }
+  });
+
+  document.addEventListener('mousemove', (e) => {
+    if (isDragging && currentScale > 1) {
+      offsetX = e.clientX - startX;
+      offsetY = e.clientY - startY;
+      updateImageTransform();
+    }
+  });
+
+  document.addEventListener('mouseup', () => {
+    isDragging = false;
+    modalImg.style.transition = 'transform 0.3s ease';
+    if (currentScale > 1) {
+      modalImg.style.cursor = 'grab';
+    }
+  });
+
+  // Touch events for mobile
+  modalImg.addEventListener('touchstart', (e) => {
+    if (currentScale > 1 && e.touches.length === 1) {
+      isDragging = true;
+      startX = e.touches[0].clientX - offsetX;
+      startY = e.touches[0].clientY - offsetY;
+      modalImg.style.transition = 'none';
+    }
+  });
+
+  document.addEventListener('touchmove', (e) => {
+    if (isDragging && currentScale > 1 && e.touches.length === 1) {
+      e.preventDefault();
+      offsetX = e.touches[0].clientX - startX;
+      offsetY = e.touches[0].clientY - startY;
+      updateImageTransform();
+    }
+  });
+
+  document.addEventListener('touchend', () => {
+    isDragging = false;
+    modalImg.style.transition = 'transform 0.3s ease';
+  });
 </script>
 </body>
 </html>
